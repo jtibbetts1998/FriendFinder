@@ -21,8 +21,8 @@
         <!--Line break-->
 
         <h1>About you</h1>
-            <br>
-            <h4>Name: </h4>
+        <br>
+        <h4>Name: </h4>
         <div class="form-group">
             <label for="exampleFormControlInput1">(This step is required)</label>
             <input type="text" id="name" class="form-control" required>
@@ -175,8 +175,27 @@
         <br>
         <button class="btn btn-primary" type="submit">Submit</button>
 
-    </form>
+        <script>
+        app.get("/:operation/:User1/:User2", function(req,res) {
+            var operation = req.params.operation;
+            var User1 = parseInt(req.params.User1);
+            var User2 = parseInt(req.params.User2);
+            var totalDiffence;
 
+            switch(operation) {
+                case "add":
+                case "+":
+                totalDiffence = User1 + User2;
+                break;
+                case "subtract":
+                case "-":
+                totalDiffence = User1 - User2;
+                break;
+            }
+        }
+        </script>
+
+    </form>
 </body>
 
 </html>
