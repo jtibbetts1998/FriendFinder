@@ -6,12 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Survey Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="server.js"></script>
+    <!--<script src="server.js"></script>-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -119,34 +116,34 @@
 
         <br>
         <h3>Question 7</h3>
-            <label>In a discussion, truth should be more important than people’s
+        <label>In a discussion, truth should be more important than people’s
             sensitivities.</label>
-            <select class="form-control" id="question7">
-                <option value="1">1 (Strongly Disagree)</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5 (Strongly Agree)</option>
-            </select>
+        <select class="form-control" id="question7">
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
         </div>
 
         <br>
         <h3>Question 8</h3>
-            <label>You rarely get carried away by fantasies and ideas.</label>
-            <select class="form-control" id="question8">
-                <option value="1">1 (Strongly Disagree)</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5 (Strongly Agree)</option>
-            </select>
+        <label>You rarely get carried away by fantasies and ideas.</label>
+        <select class="form-control" id="question8">
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
         </div>
 
         <br>
         <h3>Question 9</h3>
         <div class="form-group">
             <label>You think that everyone’s views should be respected regardless of
-            whether they are supported by facts or not.</label>
+                whether they are supported by facts or not.</label>
             <select class="form-control" id="question9">
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -158,28 +155,26 @@
 
         <br>
         <h3>Question 10</h3>
-            <label>You feel more energetic after spending time with a group of people.</label>
-            <select class="form-control" id="question10">
-                <option value="1">1 (Strongly Disagree)</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5 (Strongly Agree)</option>
-            </select>
+        <label>You feel more energetic after spending time with a group of people.</label>
+        <select class="form-control" id="question10">
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
         </div>
 
         <!--Create submit button so user can complete survey and move onto the next step to see results-->
         <br>
         <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+        <script type="text/javascript">
 
-        <script>
-            var express = require("express");
-
-            var PORT = process.env.PORT || 8080;
-
-            var app = express();
-
-            app.get("/:operation/:User1/:User2", function (req, res) {
+            $.get("/:operation/:User1/:User2", function (req, res) {
                 var operation = req.params.operation;
                 var User1 = parseInt(req.params.User1);
                 var User2 = parseInt(req.params.User2);
@@ -203,8 +198,6 @@
                 });
             });
         </script>
-
-    </form>
 </body>
 
 </html>
