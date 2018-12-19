@@ -176,23 +176,23 @@
         <button class="btn btn-primary" type="submit">Submit</button>
 
         <script>
-        app.get("/:operation/:User1/:User2", function(req,res) {
-            var operation = req.params.operation;
-            var User1 = parseInt(req.params.User1);
-            var User2 = parseInt(req.params.User2);
-            var totalDiffence;
+            app.get("/:operation/:User1/:User2", function (req, res) {
+                var operation = req.params.operation;
+                var User1 = parseInt(req.params.User1);
+                var User2 = parseInt(req.params.User2);
+                var totalDiffence;
 
-            switch(operation) {
-                case "add":
-                case "+":
-                totalDiffence = User1 + User2;
-                break;
-                case "subtract":
-                case "-":
-                totalDiffence = User1 - User2;
-                break;
-            }
-        }
+                switch (operation) {
+                    case "add":
+                    case "+":
+                        totalDiffence = User1 + User2;
+                        break;
+                    case "subtract":
+                    case "-":
+                        totalDiffence = User1 - User2;
+                        break;
+                }
+            });
         </script>
 
     </form>
