@@ -1,11 +1,14 @@
-var friendsArray = [
+var friendsData = [
     {
-        "name": "",
+        "name": "Justin",
         "photo": "",
-        "scores": [
-
-        ]
+        "scores": []
+    },
+    {
+        "name": "Kaitlyn",
+        "photo": "",
+        "scores": []
     }
 ];
 
-module.exports = friendsArray;
+module.exports = friendsData;
