@@ -175,22 +175,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-        <script type="text/javascript">
-            //1. Take in value of users answers, use jquery for user data
-            $("addFriend").on("click", event => {
-                event.preventDefault();
-                $("#matchName").text("");
-                $("#Picture").attr("src", "")
-                function checkForm() {
-                    let isValid = true;
-                    
-                    if($("#name").val() === "" || $("photo").val() === "") {
-                        isValid = false
-                    }
-                    return isValid;
+    <script type="text/javascript">
+
+        //1. Take in value of users answers
+        $("addFriend").on("click", event => {
+            event.preventDefault();
+            $("#matchName").text("");
+            $("#Picture").attr("src", "")
+            function checkForm() {
+                let isValid = true;
+
+                if ($("#name").val() === "" || $("photo").val() === "") {
+                    isValid = false
                 }
-                if(checkForm()) {
-                    const newFriend = {
+                return isValid;
+            }
+            if (checkForm()) {
+                const newFriend = {
                     name: $("name")
                         .val()
                         .trim(),
@@ -210,12 +211,25 @@
                         $("#question10").val(),
                     ]
 
-                    }
                 }
+                //Send post request to server for server to take user data
+                $.post("/api/friends", newFriend, data => {
+                    if (data) {
+                        alert("Good luck!");
+                    } else {
+                        alert("Uh Oh");
+                    }
+                    $("#name").val("");
+                    $("#photo").val("");
+                    $("#matchName").text('${data.name}');
+                    $("#matchPicture").attr("src", data.photo)
+                });
+                console.log(newFriend);
+            } else {
+                alert("Something went wrong!")
             }
-            //2. Send post request to server for server to take user data
-            //3. Take data from server and put it in model
-        </script>
+        });
+    </script>
 </body>
 
 </html>
